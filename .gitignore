@@ -1,0 +1,8 @@
+# Ignore les fichiers de configuration spécifiques à l'environnement
+.env
+
+# Ignore les répertoires et fichiers générés par npm
+node_modules/
+
+# Ignore les fichiers de dépendance générés
+package-lock.json

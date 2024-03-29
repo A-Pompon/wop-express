@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  back-wop:
+    image: back:latest
+    container_name: back-wop
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "4000:4000"
+    environment:
+      - MONGO_URI=mongodb://mongo-wop:27017/WoP
+    networks:
+      - wop
+  mongo-wop:
+    image: mongo:latest
+    container_name: mongo-wop
+    ports:
+      - "27017:27017"
+    networks:
+      - wop
+    volumes:
+      - ./mongodb_data:/data/db
+networks:
+  wop:
+    driver: bridge
