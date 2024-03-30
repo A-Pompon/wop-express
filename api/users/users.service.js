@@ -91,8 +91,9 @@ class UserService {
 
   async deleteUser(id) {
     await User.findOneAndDelete({ _id: id });
-    // await User.updateMany({ friends: id }, { $pull: { friends: id } });
   }
+
+  // await User.updateMany({ friends: id }, { $pull: { friends: id } });
 
   // async deleteUser(id) {
   //   try {
